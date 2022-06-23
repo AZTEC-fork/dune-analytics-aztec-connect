@@ -1,7 +1,9 @@
 # dune-analytics-aztec-connect
 
 A PostgreSQL abstraction to extract data from the `processRollup` operation.
-The resulting structure looks like this:
+The resulting structures looks like this:
+
+### aztec_v2_proof_bridge_data_struct
 ```
 type aztec_v2_proof_bridge_data_struct as (
   addressId numeric,
@@ -13,7 +15,10 @@ type aztec_v2_proof_bridge_data_struct as (
   secondInputInUse boolean,
   secondOutputInUse boolean
 );
+```
 
+### aztec_v2_inner_proof_data_struct
+```
 type aztec_v2_inner_proof_data_struct as (
   proofType text,
   noteCommitment1 bytea,
@@ -24,7 +29,10 @@ type aztec_v2_inner_proof_data_struct as (
   publicOwner bytea,
   asset text
 );
+```
 
+### aztec_v2_proof_data_struct
+```
 type aztec_v2_proof_data_struct as (
   rollupId numeric,
   rollupSize numeric,
